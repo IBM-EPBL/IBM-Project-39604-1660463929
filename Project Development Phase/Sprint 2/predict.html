@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <b>Enter Your Details For Loan Approval Prediction</b>
+<style>  
+body{  
+  font-family: Calibri;  
+  background-color:Skyblue ;  
+}
+form
+{
+border-style: solid;
+border-color:lightpink ;
+border-width: 5px 5px;
+background-color:white;
+} 
+</style>
+</head>
+<br><br> 
+
+<body>
+
+<form action="/submit" method="post">
+
+    <label> Gender </label><br>
+    <select name="Gender" id="Gender" class="Input">
+      {% for o in gender %}
+      <option value="{{ o.gender }}">{{ o.gender }}</option>
+      {% endfor %}
+    </select>      <br><br>
+
+    <label for="">Marriage Status</label><br>
+    <select name="Married" id="Married" class="Input">
+      {% for o in mar %}
+      <option value="{{ o.married }}">{{ o.married }}</option>
+      {% endfor %}
+    </select> <br><br>
+   
+  <label> Dependents </label><br>
+  <input type="text" id="Dependents" name="Dependents" placeholder="No.of dependents on you" size="150"/> <br> <br>  
+         
+   <label for="">Education</label><br>
+   <select name="Education" id="Education" class="Input">
+    {% for o in edu %}
+    <option value="{{ o.education }}">{{ o.education }}</option>
+    {% endfor %}
+  </select><br><br>
+  
+  <label for="">Self_Employed</label><br>
+  <select name="Self_Employed" name="Self_Employed" class="Input">
+    {% for o in sel %}
+    <option value="{{ o.sel_emp }}">{{ o.sel_emp }}</option>
+    {% endfor %}
+  </select><br><br>
+    
+  <label for="AI">Amount_Income</label>
+  <input type="text" id="AI" name="AI">
+  <br><br>
+  <label for="CI">Co-applicant_Income</label>
+  <input type="text" name="CI" id="CI">
+  <br><br>
+  <label for="LA">Loan_Amount</label>
+  <input type="text" name="LA" id="LA">
+  <br><br>
+  <label for="LAT">Loan_Amount_Term</label>
+  <input type="text" name="LAT" id="LAT">
+  <br><br>
+  <label for="CH">Credit_History</label>
+  <input type="text" name="CH" id="CH">
+  <br><br>
+
+  
+
+  <label for="">Property_Area</label><br>
+  <select name="Property_Area" id="Property_Area" class="Input">
+    {% for o in pa %}
+    <option value="{{ o.property_area }}">{{ o.property_area }}</option>
+    {% endfor %}
+  </select>
+  <br><br>
+
+  
+
+  <input type="submit" value="submit">
+</form>
+
+
+
+</body>
+</html>
